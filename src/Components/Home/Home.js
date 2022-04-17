@@ -36,10 +36,6 @@ const Home = () => {
            <div className='bg-blue-100 '>
                <h1 className='text-3xl bg-black text-amber-300 font-bold p-3 '>Our Services</h1>
 
-               <div>
-
-               </div>
-
             <div className='grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto justify-items-center'>
                 {
                   packages.slice(0,3).map(service=><Service
