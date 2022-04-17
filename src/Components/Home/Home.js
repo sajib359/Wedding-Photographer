@@ -1,12 +1,19 @@
-import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Service from '../Service/Service';
 
 const Home = () => {
+    const [ packages , setPackage] =useState([]);
+    useEffect(()=>{
+        fetch('services.json')
+        .then(res=>res.json())
+        .then(data=>setPackage(data))
+    },[])
     return (
         <div>
            <img className='w-full ' src="https://shahriarnobinewazphotography.com/wp-content/uploads/2022/01/www.facebook.com_shahriarnobinewazphotography_For_Web_0156.jpg" alt="" />
 
-           <div className='flex justify-center  bg-sky-100'>
+           <div className='flex justify-center  bg-sky-100 pb-5'>
                <div className='w-full'>
                     <img className='mx-auto rounded-md mt-5' src="https://shahriarnobinewazphotography.com/wp-content/uploads/2022/02/SNN07200-Web-2-400x522.jpg" alt="" />
                     <h2 className='text-2xl font-bold text-blue-600'>Shahriar Nobi Newaz</h2>
@@ -26,8 +33,25 @@ const Home = () => {
                </div>
            </div>
 
-           <div>
-               
+           <div className='bg-blue-100 '>
+               <h1 className='text-3xl bg-black text-amber-300 font-bold p-3 '>Our Services</h1>
+
+               <div>
+
+               </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto justify-items-center'>
+                {
+                  packages.slice(0,3).map(service=><Service
+                    key={service.id}
+                    service={service}
+                    ></Service>)  
+                }
+            </div>
+            <Link to='/reviews'>
+           <button className='text-2xl font-mono font-bold bg-cyan-300 md:px-16 py-3 mt-5 ' 
+            >See All Services </button>
+            </Link>
            </div>
         </div>
     );

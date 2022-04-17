@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "Neymar Jr",
+      "comments": "this is best earphone in this budget section",
+      "date":" 2020 September 15",
+      "ratings": 4.5,
+      "img": "https://descargas.ams3.digitaloceanspaces.com/images/4631/neymar-jr-wallpapers-hd-2022_icon_android.png"
+    },
+    {
+      "id": 2,
+      "name": "Cristiano Ronaldo",
+      "comments": "strong build quality earphone",
+      "date": "2019, September",
+      "ratings": 5,
+      "img": "https://www.mykhel.com/thumb/190x90x190/football/players/7/14937.1527496349.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Lionel Messi",
+      "Band": "Best earphone  this year",
+      "date":	"2018 September",
+      "ratings":5,
+      "img": "https://www.mykhel.com/thumb/190x90x190/football/players/4/19054.1527496212.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Shah Rukh Khan",
+      "comments": "Like it ",
+      "date": "2021",
+      "ratings": 41,
+      "img": "http://www.krkboxoffice.com/media/16414/68596621-shahrukh-khan-wallpapers.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Salman Khan",
+      "comments": "love form india",
+      "date": "2021",
+      "ratings":4,
+      "img": "https://www.spectralhues.com/wp-content/uploads/2013/02/Salman-Khan.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Hero Alom",
+      "comments": "Earphone ta valo ase amar gaoa gaan gulao valo shuna jai",
+      "date": "2021",
+      "ratings": 5,
+      "img": "https://play-lh.googleusercontent.com/Ht1VQHfX40ggoZUgemTIsPxx0TCwqWUWvG3haQbA6u4_xJGYN0Qda0FzpqDINOOeIeQ=s180-rw"
+    }
+  ]
