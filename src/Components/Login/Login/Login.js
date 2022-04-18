@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const emailRf = useRef("");
     const passwordRf = useRef('');
+    const navigate = useNavigate('');
 
     const handleSubmit= event =>{
         event.preventDefault();
@@ -11,10 +13,14 @@ const Login = () => {
         console.log(email,password);
     }
 
+    const navigateRegister= event =>{
+        navigate('/register')
+    }
+
   return (
     <div className="">
-      <h1 className="text-5xl text-bold text-sky-600 mt-5">Please Login!!</h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-sm mx-auto mt-12 mb-12">
+      <h1 className="text-5xl text-bold text-sky-600 mt-5 text-center">Please Login!!</h1>
+      <form onSubmit={handleSubmit} className="w-full max-w-sm mx-auto mt-12 ">
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
             <label
@@ -29,7 +35,7 @@ const Login = () => {
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               id="inline-full-name"
               type="text"
-              placeholder="Enter your name"
+              placeholder="Enter your name" required
             />
           </div>
         </div>
@@ -47,7 +53,7 @@ const Login = () => {
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               id="inline-password"
               type="password"
-              placeholder="******************"
+              placeholder="******************" required
             />
           </div>
         </div>
@@ -69,7 +75,9 @@ const Login = () => {
             
           </div>
         </div>
+        <p className="text-xl font-bold pb-16 pt-5 ">If You Not Registered !! <span className="text-orange-400 cursor-pointer" onClick={navigateRegister}>Please Register</span></p>
       </form>
+      
     </div>
   );
 };
