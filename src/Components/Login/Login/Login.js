@@ -1,5 +1,6 @@
+import { async } from "@firebase/util";
 import React, { useRef } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -8,6 +9,13 @@ const Login = () => {
     const emailRf = useRef("");
     const passwordRf = useRef('');
     const navigate = useNavigate();
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    const navigateResetPassword =async() =>{
+      const email = emailRf.target.email.value;
+      await sendPasswordResetEmail(email);
+      alert('Sent email');
+    }
 
     const [
       signInWithEmailAndPassword,
@@ -94,6 +102,7 @@ const Login = () => {
         
       </form>
       <p className="text-xl font-bold pb-16 pt-5 ">If You Not Registered !! <span className="text-orange-400 cursor-pointer" onClick={navigateRegister}>Please Register</span></p>
+      <p className="text-xl font-bold pb-16 pt-5 ">Forgot Password ? <span className="text-orange-400 cursor-pointer" onClick={navigateResetPassword}>Reset Password</span></p>
 
       <SocialLogin></SocialLogin>
     </div>

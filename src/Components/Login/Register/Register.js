@@ -42,7 +42,7 @@ const Register = () => {
                   type="text"
                   placeholder="Name"
                   name="name"
-                  re
+                  required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
               </div>
