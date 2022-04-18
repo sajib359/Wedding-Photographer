@@ -17,7 +17,7 @@ const Home = () => {
         alt=""
       />
 
-      <div className=' grid mt-8 gap-3 max-h-85 grid-cols-1 md:flex md: justify-center'>
+      <div className=' grid pb-6 gap-3 max-h-85 grid-cols-1 md:flex md: justify-center bg-sky-200'>
         <div className="w-full">
           <img
             className="mx-auto rounded-md mt-5"
@@ -34,9 +34,7 @@ const Home = () => {
             Shahriar Nobi Newaz is an wedding photography & Cinematography farm
             that covering events all over the globe.
           </p>
-          <button className="bg-red-400 p-3 rounded-xl text-2xl font-mono font-bold ">
-            BOOKING
-          </button>
+          <a className="bg-red-400 p-3 rounded-xl text-2xl font-mono font-bold mb-3" href="https://mywed.com/en/photographer/snnp/">Booking</a>
         </div>
         <div className="w-full text-center mt-40 ">
           <h2 className="text-5xl font-semibold text-sky-500">My Stories</h2>
