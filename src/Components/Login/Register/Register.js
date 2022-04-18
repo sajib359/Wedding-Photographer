@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+    const navigate = useNavigate();
+    const navigateLogin = event=>{
+        navigate('/login')
+    }
   return (
     <div>
       <div class="flex items-center justify-center min-h-screen bg-gray-100">
@@ -56,9 +61,8 @@ const Register = () => {
               </div>
               <div class="mt-6 text-grey-dark">
                 Already have an account?
-                <a class="text-blue-600 hover:underline" href="#">
-                  Log in
-                </a>
+                <span className="text-orange-400 cursor-pointer" onClick={navigateLogin}>Log In</span>
+               
               </div>
             </div>
           </form>
