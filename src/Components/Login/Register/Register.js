@@ -2,6 +2,7 @@ import React from "react";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [
@@ -84,6 +85,8 @@ const Register = () => {
               <div className="mt-6 text-grey-dark">
                 Already have an account?
                 <span classNameName="text-orange-400 cursor-pointer" onClick={navigateLogin}>Log In</span>
+
+                <SocialLogin></SocialLogin>
                
               </div>
             </div>
