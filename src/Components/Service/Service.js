@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Navigate } from "react-router-dom";
 
 const Service = (props) => {
   const { name, img, details, category, price } = props.service;
@@ -16,7 +17,9 @@ const Service = (props) => {
         </h3>
         <p className="text-xl text-orange-300 font-mono p-2">{details}</p>
         <h4 className="text-xl font-bold p-2">PRICE: {price}</h4>
-        <button className="w-full bg-slate-500 p-3 rounded-md">Cheakout</button>
+        <Link to='/cheakout'>
+        <button onClick={<Navigate to='/cheakout'></Navigate>} className="w-full bg-slate-500 p-3 rounded-md">Cheakout</button>
+        </Link>
       </div>
     </div>
   );
