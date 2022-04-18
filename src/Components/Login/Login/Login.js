@@ -1,16 +1,30 @@
 import React, { useRef } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
     const emailRf = useRef("");
     const passwordRf = useRef('');
-    const navigate = useNavigate('');
+    const navigate = useNavigate();
+
+    const [
+      signInWithEmailAndPassword,
+      user,
+      loading,
+      error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if(user){
+      navigate('/')
+    }
 
     const handleSubmit= event =>{
         event.preventDefault();
-        const email=emailRf.current.value;
-        const password = passwordRf.current.value;
-        console.log(email,password);
+        const email = event.target.email.value;
+      const password = event.target.email.value;
+        signInWithEmailAndPassword(email,password)
     }
 
     const navigateRegister= event =>{
@@ -25,16 +39,17 @@ const Login = () => {
           <div className="md:w-1/3">
             <label
               className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              htmlFor="inline-full-name"
             >
-              Full Name
+              Email
             </label>
           </div>
           <div className="md:w-2/3">
             <input ref={emailRf}
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               id="inline-full-name"
-              type="text"
+              type="email"
+              name="email"
               placeholder="Enter your name" required
             />
           </div>
@@ -43,7 +58,7 @@ const Login = () => {
           <div className="md:w-1/3">
             <label
               className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-password"
+              htmlFor="inline-password"
             >
               Password
             </label>
@@ -52,6 +67,7 @@ const Login = () => {
             <input ref={passwordRf}
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               id="inline-password"
+              name="password"
               type="password"
               placeholder="******************" required
             />
@@ -69,15 +85,17 @@ const Login = () => {
           <div className="md:w-2/3">
             <input
               className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="submit" value="Sign Up"
+              type="submit" value="Log in"
             />
             
             
           </div>
         </div>
-        <p className="text-xl font-bold pb-16 pt-5 ">If You Not Registered !! <span className="text-orange-400 cursor-pointer" onClick={navigateRegister}>Please Register</span></p>
+        
       </form>
-      
+      <p className="text-xl font-bold pb-16 pt-5 ">If You Not Registered !! <span className="text-orange-400 cursor-pointer" onClick={navigateRegister}>Please Register</span></p>
+
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
