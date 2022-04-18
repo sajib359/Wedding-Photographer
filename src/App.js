@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
 import Blogs from './Components/Blogs/Blogs';
+import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
@@ -21,6 +22,8 @@ function App() {
         <Route path='/*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
+
+      <Footer></Footer>
    
     </div>
   );

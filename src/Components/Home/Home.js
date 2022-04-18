@@ -44,7 +44,7 @@ const Home = () => {
                     ></Service>)  
                 }
             </div>
-            <Link to='/reviews'>
+            <Link to='/services'>
            <button className='text-2xl font-mono font-bold bg-cyan-300 md:px-16 py-3 mt-5 ' 
             >See All Services </button>
             </Link>
